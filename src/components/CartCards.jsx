@@ -22,7 +22,7 @@ const CartCards = ({id , title, price, description, category, image, rating, qua
    
     return (
     <div className='m-5 h-[30%] bg-slate-100  flex shadow-lg'>
-        <div className='flex p-3 justify-center align-center'>
+        <div className='flex w-[40%] justify-center '>
                 <img src={image} alt={title} className='rounded-lg h-30 w-30' />
             </div>
 

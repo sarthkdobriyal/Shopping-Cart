@@ -1,14 +1,15 @@
-import React, { useContext } from 'react'
-
-
-
+import React, { useContext, useState } from 'react'
 
 import CartContext from '../CartContext';  
 
-const ProductCard = ({id , title, price, description, category, image, rating}) => {
+
+const ProductCard = ({id , title, price, description, category, image, rating, setShowModal, setModalId}) => {
 
 
     const {  addToCart } = useContext(CartContext)
+
+
+
 
 
 
@@ -23,11 +24,20 @@ const ProductCard = ({id , title, price, description, category, image, rating}) 
 
 
     return (
-        <div className='w-[30%] py-5 px-5 bg-slate-100 rounded-xl shadow-xl flex flex-col justify-center items-left'>
+        <>
+
+        <div           
+             className='w-[30%] py-5 px-5 bg-slate-100 rounded-xl shadow-xl flex flex-col justify-center items-left cursor-pointer'>
 
             
 
-            <div className=' w-full flex justify-center align-center my-2'>
+            <div 
+                onClick={() => {
+                    setModalId(id)
+                    setShowModal((prev) => !prev)
+                    window.scrollTo(0, 0)
+                }}
+            className=' w-full flex justify-center align-center my-2'>
                 <img src={image} alt={title} className='rounded-lg h-60' />
             </div>
 
@@ -45,6 +55,9 @@ const ProductCard = ({id , title, price, description, category, image, rating}) 
             </button>
             
         </div>
+
+     
+        </>
     )
 }
 
