@@ -8,7 +8,6 @@ const Shop = () => {
     const [products, setProducts] = useState(null);
  
 
-
     useEffect(() => {
 
         const fetchProducts = async () => {
@@ -19,6 +18,7 @@ const Shop = () => {
         fetchProducts();
 
     }, [])
+
 
     return (
         <div className='flex justify-center align-top px-10 py-10 gap-10 flex-wrap bg-slate-200'>
