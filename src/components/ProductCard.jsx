@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 
-// import CartContext from '../CartContext';  
+import CartContext from '../CartContext';  
 
 const ProductCard = ({id , title, price, description, category, image, rating}) => {
 
 
-    // const { cartItems, addToCart } = useContext(CartContext)
+    const { cartItems, addToCart } = useContext(CartContext)
 
 
 
@@ -13,7 +13,7 @@ const ProductCard = ({id , title, price, description, category, image, rating}) 
         const item = {
             id, category, description, image, title, price, rating, quantity: 1
         }
-        // addToCart(item)
+        addToCart(item)
     }
 
 
